@@ -108,7 +108,7 @@ public class Application {
     @KafkaListener(id = "rubik.etlGroup", topics = "rubik-hack.output", containerFactory="kafkaListenerContainerFactory")
     public void dltListen(String message) {
         logger.info("Received from ETL: message={}" , message);
-        this.exec.execute(() -> System.out.println("Hit Enter to terminate..."));
+        // TODO: Trigger scheduler to load data to ADS
     }
 
     @Bean
